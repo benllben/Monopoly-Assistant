@@ -5,3 +5,5 @@ Planned features include:
 - Saving current game state to server
 - Restoring saved game state from server
 - Responsive design overhaul
+
+Try the current public version at: www.benprograms.com/monopoly/
