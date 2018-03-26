@@ -1,0 +1,315 @@
+body {
+	background-color: #f5f8fa;
+}
+
+
+.appFont {
+	color: #444444;
+}
+
+.mainBtnFont {
+	color: #fcf7f7;
+	border-radius: 0;
+	background-color: #b63a58;
+	border-color: #b63a58;
+}
+
+.mainBtnFont:hover {
+	background-color: #ee2759;
+	color: #fcf7f7;
+	border-color: #ee2759;
+}
+
+.mainBtnFont:active {
+	background-color: #b63a58;
+	border-color: #b63a58;
+}
+
+.mainBtnFont:hover div{
+	transform: scale(1.15);
+}
+
+.bottomBtn {
+	color: #fcf7f7;
+	background-color: #3c6db5;
+	border-radius: 0;
+	border-style: none;
+}
+
+
+
+.bottomBtn:hover {
+	background-color: #6ba2c1;
+	color: #fcf7f7;
+	border-color: #6ba2c1;
+}
+
+.bottomBtn:hover div {
+	transform: scale(1.15);
+	border-style: none;
+}
+
+
+
+#app {
+	background-color: #fcf7f7;
+	height: 100%;
+}
+
+#playerNameDisplay {
+	background-color: #6ba2c1;
+}
+
+
+
+.sectiond {
+	width: 49%;
+	display: inline-block;
+	padding: 20px;
+}
+
+
+
+.contentd {
+	width: 78%;
+	margin-left: 11%;
+}
+
+.contentd label {
+	width: 28%;
+	font-size: 1.5em;
+}
+
+.contentd input {
+	width: 50%;
+	font-size: 1.5em;
+}
+
+.contentd select {
+	width: 50%;
+	font-size: 1.5em;
+}
+
+.contentd button {
+	width: 26%;
+	font-size: 1.5em;
+}
+
+.inputGroup {
+	margin-top: 1.5em;
+}
+
+.contentTitle {
+	//text-align: center;
+	width: 75%;
+	font-size: 2em;
+	font-weight: bold;
+	margin-left: 35%;
+}
+
+#controls {
+	height: 15%;
+	width: 100%;
+	background-color: green;
+	position: absolute;
+	bottom: 7%;
+}
+
+#footer {
+	height: 7%;
+	width: 100%;
+	background-color: blue;
+	position: absolute;
+	bottom: 0%;
+}
+
+.controlBtnDiv {
+	width: 24%;
+	height: 100%;
+	display: inline-block;
+}
+
+.controlButton {
+	position: relative;
+	top: 50%;
+	left: 50%;
+
+	transform: translate(-50%, -50%);
+}
+
+#hrControls {
+	margin-top: 0%;
+}
+
+
+
+
+#sideBar {
+	width: 26%;
+	height: 100%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#appContent {
+	width: 73%;
+	height: 100%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#sideHead {
+	width: 100%;
+	height: 10%;
+	background-color: #b63a58;
+	border-bottom: 2px solid #444444;
+}
+
+.playerDisplay {
+	display: block;
+	width: 100%;
+	height: 11%;
+	padding: 20px;
+}
+
+.playerDisplay p {
+	font-size: 20px;
+	font-weight: bold;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	color: #224271;
+}
+
+#sideFoot {
+	width: 100%;
+	height: 10%;
+	background-color: #b63a58;
+	border-top: 2px solid #444444;
+}
+
+#playerNameDisplay {
+	width: 100%;
+	height: 80%;
+}
+
+#errorField {
+	width: 40%;
+	margin-left: 30%;
+	height: 4%;
+	padding-top: 1%;
+}
+
+#errorField h3 {
+	width: 100%;
+	text-align: center;
+	color: #ee2759;
+}
+
+.errorMsg {
+	color: #ee2759;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 3%;
+	font-size: 120%;
+}
+
+
+
+
+.appPane {
+	height: 42%;
+	width: 75%;
+	//background-color: yellow;
+	margin-left: 12.5%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+#appBtnGroup {
+	width: 75%;
+	margin-left: 12.5%;
+	padding-top: 3%;
+	height: 12%;
+}
+
+.groupBtn {
+	width: 24.5%;
+	height: 70%;
+}
+
+.paneLeft {
+	width: 75%;
+	margin-left: 12.5%;
+	vertical-align: top;
+	padding: 5%;
+	padding-bottom: 0%;
+}
+
+.paneRight {
+	width: 75%;
+	margin-left: 12.5%;
+	vertical-align: top;
+	padding: 5%;
+	padding-top: 0%;
+}
+
+.paneRight button {
+	display: inline-block;
+	flex-grow: 1;
+	margin-top: 6%;
+}
+
+#add10Btn {
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+.paneLeft label {
+	width: 35%;
+	font-size: 1.5em;
+}
+
+.paneLeft input {
+	width: 64%;
+	font-size: 1.5em;
+	display: inline-block;
+}
+
+.paneLeft select {
+	width: 64%;
+	font-size: 1.5em;
+	display: inline-block;
+}
+
+.rightButtons {
+	margin: 0%;
+	display: flex;
+
+}
+
+#communityChest {
+	position: absolute;
+	top: 80%;
+	height: 10%;
+	width: 26%;
+	background-color: #3c6db5;
+}
+
+#chestValue {
+	color: #fcf7f7;
+}
+
+#footText a{
+	color: #fcf7f7;
+	font-size: 300%;
+}
+
+#footText {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}

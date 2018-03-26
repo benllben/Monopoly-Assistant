@@ -1,0 +1,164 @@
+<html>
+	<head>
+		<title>
+			Monopoly Manager
+		</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<!-- Load font awesome icons -->
+		<script src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js"></script>
+		<script src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"></script>
+
+		<!-- Include app css -->
+		<link rel="stylesheet" href="css/css.css">
+		<link rel="stylesheet" href="css/menu.css">
+
+	</head>
+	<body>
+		<div id="initial">
+			<div id="options">
+				<button class="btn btn-primary btn-lg" onclick="setupNew()">New Game</button>
+				<button class="btn btn-primary btn-lg">Load Game</button>
+			</div>		
+		</div>
+
+		<div id="app">
+			<div id="sideBar">
+				<div id="sideHead">
+					<h1 id="titleText">Monopoly Assistant</h1>
+				</div>
+				<div id="playerNameSetup">
+					<div class="playerDisplay">
+						<input type="text" id="player0" class="form-control" placeholder="Player 1 name">
+					</div>
+					<div class="playerDisplay">
+						<input type="text" id="player1" class="form-control" placeholder="Player 2 name">
+					</div>
+				</div>
+				<div id="playerNameDisplay">
+				</div>
+				<div id="sideFoot">
+					<p id="footText"><a href=""><i class="fab fa-github-square"></i></a>
+				</div>
+			</div>
+			<div id="appContent">
+
+				<div id="setupValues">				
+					<div class="optionsPane">
+						<h5>Options</h5>
+						<hr/>
+						<div class="inputGroup">
+							<label>No. Players</label>
+							<div id="numPlayers">
+								<button class="btn btn-sm" onclick="addPlayer()">+</button>
+								<button class="btn btn-sm" onclick="removePlayer()">-</button>
+							</div>
+						</div>
+						<div class="inputGroup">
+							<label>Shuffle Players</label>
+							<input type="checkbox" name="shuffle" id="shuffle">
+						</div>
+						<div class="inputGroup">
+							<label>Start money</label>
+							<input type="text" id="startMoney" class="form-control" name="startMoney" value="1500">
+						</div>
+						<div class="inputGroup">
+							<label>Pass go</label>
+							<input type="text" id="goAmount" class="form-control" name="goAmount" value="200">
+						</div>
+						<div class="inputGroup">
+							<label>Out of jail</label>
+							<input type="text" id="jailAmount" class="form-control" name="jailAmount" value="50">
+						</div>
+						<!--<div class="inputGroup">
+							<label>Mortgage percantage</label>
+							<input type="text" id="mortgagePercent" class="form-control" name="mortgagePercent" value="10%">
+						</div>-->
+						<hr/>
+						<div class="optionsBtnGroup">
+							<button class="btn btn-lg mainBtnFont" onclick="createGame()"><div>Start</div></button>
+						</div>
+						<p class="errorMsg" id="optionsError"></p>
+					</div>
+				</div>
+
+				<div id="gamePanel">
+					<div class="appPane">
+						<div class="paneLeft">
+							<p class="contentTitle appFont">Money Adjustment</p>
+					    	<p class="inputGroup"><label class="appFont">Amount:</label> <input type="text" class="form-control" id="addAmount"></p>
+					    	<p class="inputGroup">
+					    		<label class="appFont">Account:</label> 
+						    	<select id="adjustmentSelect" class="form-control">
+						    	</select>
+					    	</p>	    	
+					    </div>
+					    <div class="paneRight">
+					    	<div class="rightButtons">		    		
+					    		<button id="addBtn" class="btn btn-lg mainBtnFont" onclick="addMoney()"><div>Deposit</div></button>
+					    		<button id="add10Btn" class="btn btn-lg mainBtnFont" onclick="sub10()"><div>+ 10%</div></button>
+					    		<button id="subBtn" class="btn btn-lg mainBtnFont" onclick="deductMoney()"><div>Withdraw</div></button>
+					    	</div>
+					    	<p class="errorMsg" id="adjustError">Sample error message here</p>
+					    </div>
+					</div>
+
+					<div class="appPane">
+						<div class="paneLeft">
+							<p class="contentTitle appFont">Transfer Money</p>
+					    	<p class="inputGroup"><label class="appFont">Amount:</label> <input type="text" class="form-control" id="transferAmount"></p>
+					    	<p class="inputGroup">
+					    		<label class="appFont">From:</label> 
+						    	<select id="fromSelect" class="form-control">
+						    	</select>
+					    	</p>
+					    	<p class="inputGroup">
+					    		<label class="appFont">To:</label> 
+					    		<select id="toSelect" class="form-control">
+						    	</select>
+					    	</p>			
+					    </div>
+					    <div class="paneRight">
+					    	<div class="rightButtons">
+					    		<button id="transferBtn" class="btn btn-lg mainBtnFont" onclick="transferMoney()"><div>Confirm</div></button>
+					    	</div>
+					    	<p class="errorMsg" id="transferError">Sample error message here</p>
+					    </div>
+					</div>
+
+					<div id="errorField">
+						<p id="gameError" class="errorMsg"></p>
+					</div>
+
+					<div id="appBtnGroup">
+						<button class="groupBtn btn bottomBtn" onclick="undo()"><div>Undo</div></button>
+						<button class="groupBtn btn bottomBtn" onclick="passGo()"><div>Pass Go</div></button>
+						<button class="groupBtn btn bottomBtn" onclick="claimCommunity()"><div>Claim Chest</div></button>
+						<button class="groupBtn btn bottomBtn" onclick="nextTurn()"><div>Next Turn</div></button>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
+
+<!-- Include game manager class -->
+<script src="scripts/gameManager.js"></script>
+
+<!-- Include custom classes -->
+<script src="scripts/classes.js"></script>
+
+<!-- Include action manager. Supports Undo -->
+<script src="scripts/actionManager.js"></script>
+
+<!-- Include page handler class -->
+<script src="scripts/pageHandler.js"></script>
+<script>onstart();</script>
