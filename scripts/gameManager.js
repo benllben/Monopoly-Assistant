@@ -316,3 +316,19 @@
 			return string;								/* Return original value */
 		}
 	}
+
+	function saveGame(){
+
+		// Create variable with all variables to save
+		var save = {
+			numPlayers: 	numPlayers,
+			startAmount: 	startAmount,
+			goAmount: 		goAmount,
+			jailAmount: 	jailAmount,
+			turn: 			turn,
+			communityPool: 	communityPool,
+			players: 		players
+		}
+
+		// Attempt to save to server
+	}
