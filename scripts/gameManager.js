@@ -350,11 +350,9 @@
 
 	}
 
-		function loadGame(){
+	function loadGame(){
 		// Testing game id
-		var gameId = 2;
-
-		var gameData;
+		var gameId = 4;
 
 		// Attempt to load game from server
 		$.ajax({
@@ -364,11 +362,7 @@
 				gameId: gameId
 			},
 			success: function(json){
-				console.log("success " + json.gameData);
-				gameData = json.gameData;
-
-				var gameDataObject = JSON.parse(gameData);
-				console.log(gameDataObject);
+				setupLoadedGame(json.gameData);
 			},
 			error: function(xhr, desc, err){
 				console.log(xhr + "\n" + err);
@@ -376,3 +370,32 @@
 		});
 	}
 
+
+	function setupLoadedGame(data){
+		// Convert string to object
+		var gameData = JSON.parse(data);
+
+		// Restore game variables
+		numPlayers = 	gameData.numPlayers;
+		startAmount =	gameData.startAmount;
+		goAmount =		gameData.goAmount;
+		jailAmount =	gameData.jailAmount;
+		turn =			gameData.turn;
+		communityPool =	gameData.communityPool;
+		players =		gameData.players;
+
+		$("#setupValues").hide();		// Hide setup menu
+		$("#gamePanel").show();			// Show game manager
+		$("#playerNameSetup").hide();	
+		$("#playerNameDisplay").show();
+
+		// Add player names to display
+		displayNames();
+
+		// Start game manager
+		startGame();
+
+		// Setup display for active players turn
+		updateTurnChange();
+
+	}
