@@ -330,5 +330,23 @@
 			players: 		players
 		}
 
+		// Convert object to string for database
+		var saveString = JSON.stringify(save);
+
 		// Attempt to save to server
+		$.ajax({
+			url: 'model/boats.php',
+			type: 'POST',
+			data: {
+				saveData: saveString
+			},
+			success: function(json){
+				console.log("success " + json.saveId);
+			},
+			error: function(xhr, desc, err){
+				console.log(xhr + "\n" + err);
+			}
+		});
+
 	}
+
