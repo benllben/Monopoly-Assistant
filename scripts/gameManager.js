@@ -350,3 +350,29 @@
 
 	}
 
+		function loadGame(){
+		// Testing game id
+		var gameId = 2;
+
+		var gameData;
+
+		// Attempt to load game from server
+		$.ajax({
+			url: 'server/load.php',
+			type: 'POST',
+			data: {
+				gameId: gameId
+			},
+			success: function(json){
+				console.log("success " + json.gameData);
+				gameData = json.gameData;
+
+				var gameDataObject = JSON.parse(gameData);
+				console.log(gameDataObject);
+			},
+			error: function(xhr, desc, err){
+				console.log(xhr + "\n" + err);
+			}
+		});
+	}
+
