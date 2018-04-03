@@ -16,6 +16,8 @@ function onstart() {
 	$("#initial").hide();
 	$("#playerNameDisplay").hide();
 	$("#setupNames").hide();
+	$("#loadPanel").hide();
+	$("#savePanel").hide();
 }
 
 function setupNew() {

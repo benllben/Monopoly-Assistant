@@ -45,8 +45,8 @@
 				<div id="playerNameDisplay">
 				</div>
 				<div id="saveControls">
-					<button class="saveBtns btn"><div>Load</div></button>
-					<button class="saveBtns btn"><div>Save</div></button>
+					<button class="saveBtns btn" onclick="displayLoad()"><div>Load</div></button>
+					<button class="saveBtns btn" onclick="displaySave()"><div>Save</div></button>
 				</div>
 				<div id="sideFoot">
 					<p id="footText"><a href="https://github.com/benllben/Monopoly-Assistant"><i class="fab fa-github-square"></i></a>
@@ -90,6 +90,37 @@
 							<button class="btn btn-lg mainBtnFont" onclick="createGame()"><div>Start</div></button>
 						</div>
 						<p class="errorMsg" id="optionsError"></p>
+					</div>
+				</div>
+
+				<div id="loadPanel">
+					<div class="dataPane">
+						<p class="contentTitle appFont">Load Game</p>
+						<div class="dataGroup">
+							<label class="appFont">Game ID: </label>
+							<input type="text" class="form-control">
+						</div>
+						<div class="dataGroup">
+							<label class="appFont">Password: </label>
+							<input type="password" class="form-control">
+						</div>
+						<div class="container100">
+							<button class="btn btn-xl mainBtnFont" onclick="hideLoad()"><div>Cancel</div></button>
+							<button class="btn btn-xl mainBtnFont" onclick="loadGame()"><div>Load</div></button>
+						</div>
+					</div>
+				</div>
+				<div id="savePanel">
+					<div class="dataPane">
+						<p class="contentTitle appFont">Save Game</p>
+						<div class="dataGroup">
+							<label class="appFont">Password: </label>
+							<input type="password" class="form-control">
+						</div>
+						<div class="container100">
+							<button class="btn btn-xl mainBtnFont" onclick="hideSave()"><div>Cancel</div></button>
+							<button class="btn btn-xl mainBtnFont" onclick="saveGame()"><div>Save</div></button>
+						</div>
 					</div>
 				</div>
 
@@ -162,6 +193,9 @@
 
 <!-- Include action manager. Supports Undo -->
 <script src="scripts/actionManager.js"></script>
+
+<!-- Include save manager -->
+<script src="scripts/saveManager.js"></script>
 
 <!-- Include page handler class -->
 <script src="scripts/pageHandler.js"></script>
