@@ -5,6 +5,10 @@
 	// Indicates players turn
 	var turn = 0;
 
+	// 0 if game has not been saved before, else ID of game in database
+	var gameId = 0;
+
+
 	// Get reference to select inputs
 	adjustmentSelect = document.getElementById('adjustmentSelect');
 	fromSelect = document.getElementById('fromSelect');
@@ -28,6 +32,9 @@
 
 		// Ensure display is updated
 		updateDisplay();
+
+		// Set game setup to true
+		isSetup = 1;
 	}
 
 	function updateDisplay(){
@@ -316,3 +323,5 @@
 			return string;								/* Return original value */
 		}
 	}
+
+	

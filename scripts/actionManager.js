@@ -41,6 +41,6 @@ function undo(){
 		updateDisplay();
 		
 	} else {
-		console.log("Nothing left to undo!");
+		$('#gameError').show().text("Nothing left to undo!").fadeOut(6000);
 	}
 }
