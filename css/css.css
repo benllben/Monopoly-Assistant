@@ -309,9 +309,7 @@ body {
 
 #footText {
 	text-align: center;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+	
 }
 
 #saveControls {
@@ -338,4 +336,11 @@ body {
 
 #saveControls button:hover div {
 	transform: scale(1.15);
+}
+
+#gameIdDisplay {
+	text-align: center;
+	font-weight: bold;
+	color: #fcf7f7;
+	font-size: 120%;
 }

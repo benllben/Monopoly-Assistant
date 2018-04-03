@@ -8,11 +8,14 @@
     // Ensure saveData exists
     if(isset($_POST['gameId'])){
 
-    	// Get save data from post data
+    	// Get save id from post data
     	$gameId = $_POST['gameId'];
 
+    	// Get password from post data
+    	$password = $_POST['pass'];
+
     	// Create Query
-    	$query = "SELECT * FROM saveGames WHERE id = '$gameId'";
+    	$query = "SELECT * FROM saveGames WHERE id = '$gameId' AND password = '$password'";
 
     	// Execute Query
 		$result = $connection->query($query);

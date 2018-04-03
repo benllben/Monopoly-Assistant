@@ -177,7 +177,7 @@ function addPlayer(){
 	// Max 8 players
 	if(numPlayers < 8){
 		// Append input field with incremented player id
-		$("#playerNameSetup").append('<div class="playerDisplay"><input type="text" class="form-control" id="player' + numPlayers.toString() + 
+		$("#playerNameSetup").append('<div class="playerDisplay setupName"><input type="text" class="form-control" id="player' + numPlayers.toString() + 
 			'" class="form-control" placeholder="Player ' + (numPlayers + 1).toString() + ' name"></input></div>');
 		
 		// Increment player count
