@@ -192,7 +192,7 @@ body {
 
 #playerNameDisplay {
 	width: 100%;
-	height: 80%;
+	height: 75%;
 }
 
 #errorField {
@@ -292,8 +292,8 @@ body {
 
 #communityChest {
 	position: absolute;
-	top: 80%;
-	height: 10%;
+	top: 76%;
+	height: 9%;
 	width: 26%;
 	background-color: #3c6db5;
 }
@@ -312,4 +312,30 @@ body {
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+#saveControls {
+	height: 5%;
+	width: 100%;
+	display: flex;
+	border-top: 2px solid #444444;
+}
+
+#saveControls button {
+	height: 100%;
+	flex-grow: 1;
+	border-radius: 0;
+	background-color: #b63a58;
+	border-color: #b63a58;
+	color: #fcf7f7;
+}
+
+#saveControls button:hover {
+	background-color: #ee2759;
+	color: #fcf7f7;
+	border-color: #ee2759;
+}
+
+#saveControls button:hover div {
+	transform: scale(1.15);
 }
